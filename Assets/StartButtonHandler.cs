@@ -8,16 +8,16 @@ namespace UnityEngine.XR.Content.Interaction
     {
         public XRPushButton xrPushButton;
 
-        private void OnEnable()
-        {
-            xrPushButton.onPress.AddListener(OnPushButtonPress);
+        //private void OnEnable()
+        //{
+        //    xrPushButton.onPress.AddListener(OnPushButtonPress);
             
-        }
+        //}
 
-        private void OnDisable()
-        {
-            xrPushButton.onPress.RemoveListener(OnPushButtonPress);
-        }
+        //private void OnDisable()
+        //{
+        //    xrPushButton.onPress.RemoveListener(OnPushButtonPress);
+        //}
 
         public void OnPushButtonPress()
         {
