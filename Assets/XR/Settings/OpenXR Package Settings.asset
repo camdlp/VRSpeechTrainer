@@ -19,6 +19,7 @@ MonoBehaviour:
   - {fileID: 4325612287139486193}
   - {fileID: 3337513688054882024}
   - {fileID: 2677176850245171303}
+  - {fileID: -8788642473534241322}
   - {fileID: 911711588046841834}
   - {fileID: 8524811281936790811}
   - {fileID: 3856328902398777553}
@@ -26,6 +27,26 @@ MonoBehaviour:
   - {fileID: 153541018615627121}
   m_renderMode: 1
   m_depthSubmissionMode: 0
+--- !u!114 &-8788642473534241322
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4b862ee14fb479fbfe5fffe655d3ed3, type: 3}
+  m_Name: MetaQuestTouchProControllerProfile Android
+  m_EditorClassIdentifier: 
+  m_enabled: 0
+  nameUi: Meta Quest Touch Pro Controller Profile
+  version: 0.0.1
+  featureIdInternal: com.unity.openxr.feature.input.metaquestpro
+  openxrExtensionStrings: XR_FB_touch_controller_pro
+  company: Unity
+  priority: 0
+  required: 0
 --- !u!114 &-7909808884854727206
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -43,6 +64,26 @@ MonoBehaviour:
   version: 0.0.1
   featureIdInternal: com.unity.openxr.feature.input.microsoftmotioncontroller
   openxrExtensionStrings: 
+  company: Unity
+  priority: 0
+  required: 0
+--- !u!114 &-7146627506792607796
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4b862ee14fb479fbfe5fffe655d3ed3, type: 3}
+  m_Name: MetaQuestTouchProControllerProfile Standalone
+  m_EditorClassIdentifier: 
+  m_enabled: 0
+  nameUi: Meta Quest Touch Pro Controller Profile
+  version: 0.0.1
+  featureIdInternal: com.unity.openxr.feature.input.metaquestpro
+  openxrExtensionStrings: XR_FB_touch_controller_pro
   company: Unity
   priority: 0
   required: 0
@@ -209,6 +250,21 @@ MonoBehaviour:
   company: Unity
   priority: 0
   required: 0
+--- !u!114 &-1077390583949554911
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b5a1f07dc5afe854f9f12a4194aca3fb, type: 3}
+  m_Name: WebGL
+  m_EditorClassIdentifier: 
+  features: []
+  m_renderMode: 1
+  m_depthSubmissionMode: 0
 --- !u!114 &-1073742918967916007
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -228,13 +284,14 @@ MonoBehaviour:
   - {fileID: -5208977263257964306}
   - {fileID: 2725842882220237375}
   - {fileID: -2157264682439518417}
+  - {fileID: -7146627506792607796}
   - {fileID: 5376804825934290463}
   - {fileID: -7909808884854727206}
   - {fileID: -4944209644394521286}
   - {fileID: -729672966603999094}
   - {fileID: -6971949431944129717}
   - {fileID: -5243409983001862215}
-  m_renderMode: 1
+  m_renderMode: 0
   m_depthSubmissionMode: 0
 --- !u!114 &-729672966603999094
 MonoBehaviour:
@@ -288,10 +345,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f0ebc320a151d3408ea1e9fce54d40e, type: 3}
   m_Name: OpenXR Package Settings
   m_EditorClassIdentifier: 
-  Keys: 0100000007000000
+  Keys: 01000000070000000d000000
   Values:
   - {fileID: -1073742918967916007}
   - {fileID: -8911335108974866525}
+  - {fileID: -1077390583949554911}
 --- !u!114 &153541018615627121
 MonoBehaviour:
   m_ObjectHideFlags: 0
