@@ -1,71 +1,23 @@
 from flask import Flask, jsonify, request, send_file, render_template
 import os
 import io
-from pptx import Presentation
+import zipfile
 from PyPDF2 import PdfFileReader
 from PIL import Image
+import tempfile
+from pdf2image import convert_from_path
 
 app = Flask(__name__)
 app.config['UPLOAD_FOLDER'] = 'uploads/'
 
 ###### CONVERSIONS ######
 
-def convert_pptx_to_png(filepath):
-    """
-    Convierte un archivo .pptx a una imagen PNG
-    """
-    # Cargar presentación
-    prs = Presentation(filepath)
-
-    # Obtener la primera diapositiva
-    slide = prs.slides[0]
-
-    # Generar imagen
-    img_bytes = io.BytesIO()
-    slide.shapes[0].image.save(img_bytes, "png")
-    img_bytes.seek(0)
-    img = Image.open(img_bytes)
-
-    return img
-
-
 def convert_pdf_to_png(filepath):
-    """
-    Convierte un archivo .pdf a una imagen PNG
-    """
-    # Cargar PDF
-    with open(filepath, "rb") as f:
-        pdf = PdfFileReader(f)
+    # Convert the PDF file to a list of images
+    images = convert_from_path(filepath)
 
-        # Obtener la primera página
-        page = pdf.getPage(0)
-
-        # Generar imagen
-        img_bytes = io.BytesIO()
-        page.thumbnail((1000, 1000))
-        page.compressContentStreams()
-        page.writeToStream(img_bytes)
-        img_bytes.seek(0)
-        img = Image.open(img_bytes)
-
-    return img
-
-
-def convert_to_png(filepath):
-    """
-    Convierte un archivo a una imagen PNG
-    """
-    # Obtener la extensión del archivo
-    ext = os.path.splitext(filepath)[1].lower()
-
-    # Realizar la conversión correspondiente
-    if ext == ".pptx":
-        return convert_pptx_to_png(filepath)
-    elif ext == ".pdf":
-        return convert_pdf_to_png(filepath)
-    else:
-        raise ValueError("Archivo no compatible")
-
+    # Return the images
+    return images
 
 ###### ROUTES ######
 
@@ -73,14 +25,11 @@ def convert_to_png(filepath):
 def index():
     return render_template('index.html')
 
-
 @app.route('/slides')
 def get_slide_files():
     folder_path = './Slides'
     files = os.listdir(folder_path)
     return jsonify(files)
-
-
 
 @app.route('/recordings')
 def get_recording_files():
@@ -88,13 +37,40 @@ def get_recording_files():
     files = os.listdir(folder_path)
     return jsonify(files)
 
-
-@app.route('/api/download')
-def download_file():
+@app.route('/api/download_slides')
+def download_slides():
     filename = request.args.get('filename')
-    filepath = os.path.join(request.args.get('type'), filename)
-    # Log the file path
-    print(filepath)
+    filepath = os.path.join('Slides', filename)
+
+    if os.path.isfile(filepath):
+        png_images = []
+        try:
+            ext = os.path.splitext(filepath)[1].lower()
+            if ext == '.pdf':
+                png_images = convert_pdf_to_png(filepath)
+            else:
+                return 'Invalid file format', 400
+        except ValueError:
+            return 'Invalid file format', 400
+        
+        zip_filename = os.path.splitext(filename)[0] + '.zip'
+        with zipfile.ZipFile(zip_filename, 'w') as zip_file:
+            for i in range(len(png_images)):
+                with tempfile.NamedTemporaryFile(suffix='.png', delete=False) as temp_file:
+                    png_images[i].save(temp_file, format='png')
+                    temp_file.close()  # Close the temp file before deleting it
+                    zip_file.write(temp_file.name, f'slide_{i}.png')
+                    os.unlink(temp_file.name)
+                
+        return send_file(zip_filename, as_attachment=True)
+    else:
+        return 'File not found', 404
+
+@app.route('/api/download_recording')
+def download_recording():
+    filename = request.args.get('filename')
+    filepath = os.path.join('Recordings', filename)
+
     if os.path.isfile(filepath):
         return send_file(filepath, as_attachment=True)
     else:
@@ -104,11 +80,9 @@ def download_file():
 def upload_file():
     file = request.files['file']
     if file:
-        # Obtén la extensión del archivo
         file_ext = os.path.splitext(file.filename)[1].lower()
 
-        # Determina la carpeta de destino según la extensión del archivo
-        if file_ext in ('.pptx', '.pdf'):
+        if file_ext in ('.pdf'):
             type = 'Slides'
         elif file_ext == '.mp4':
             type = 'Recordings'
