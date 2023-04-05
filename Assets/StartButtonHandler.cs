@@ -23,7 +23,7 @@ namespace UnityEngine.XR.Content.Interaction
         {
             // Show in console that the button has been pressed
             Debug.Log("Button Pressed");
-            
+            Debug.Log(VideoCaptureCtrl.instance.status);
 
             if (VideoCaptureCtrl.instance.status != VideoCaptureCtrlBase.StatusType.STARTED)
             {
