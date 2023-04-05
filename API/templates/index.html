@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VRSpeech - Files Hub</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="container">
+        <h1 class="mt-4 mb-4">VRSpeech</h1>
+
+        <div class="row">
+            <div class="col-md-6">
+                <h3>Slides</h3>
+                <ul id="slides-list" class="list-group">
+                </ul>
+            </div>
+            <div class="col-md-6">
+                <h3>Recordings</h3>
+                <ul id="recordings-list" class="list-group">
+                </ul>
+            </div>
+        </div>
+
+        <div class="mt-4">
+            <h3>Upload a new file</h3>
+            <form id="upload-form" enctype="multipart/form-data">
+                <div class="mb-3">
+                    <label for="file" class="form-label">Choose a file to upload</label>
+                    <input class="form-control" type="file" id="file" name="file" required>
+                </div>
+                <button type="submit" class="btn btn-primary">Upload</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // Fetch the files and display them
+        function fetchFiles() {
+            $.getJSON('/slides', function(slides) {
+                $('#slides-list').empty();
+                slides.forEach(function(slide) {
+                    $('#slides-list').append('<li class="list-group-item">' + slide + '</li>');
+                });
+            });
+
+            $.getJSON('/recordings', function(recordings) {
+                $('#recordings-list').empty();
+                recordings.forEach(function(recording) {
+                    var downloadLink = '/api/download?type=Recordings&filename=' + encodeURIComponent(recording);
+                    $('#recordings-list').append('<li class="list-group-item d-flex justify-content-between align-items-center">' + recording + '<a href="' + downloadLink + '" class="btn btn-sm btn-outline-primary"><i class="fas fa-download"></i></a></li>');
+                });
+            });
+        }
+
+        // Upload a new file
+        $('#upload-form').on('submit', function(e) {
+            e.preventDefault();
+
+            var formData = new FormData(this);
+            $.ajax({
+                url: '/api/upload',
+                type: 'POST',
+                data: formData,
+                processData: false,
+                contentType: false,
+                success: function(response) {
+                    alert(response);
+                    fetchFiles();
+                },
+                error: function(jqXHR, textStatus, errorThrown) {
+                    alert('Error: ' + errorThrown);
+                }
+            });
+        });
+
+        // Fetch the files when the page loads
+        $(document).ready(function() {
+            fetchFiles();
+        });
+    </script>
+</body>
+</html>
