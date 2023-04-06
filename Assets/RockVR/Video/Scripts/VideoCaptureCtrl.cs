@@ -319,14 +319,20 @@ namespace RockVR.Video
         protected override void Awake()
         {
             base.Awake();
+
             // For easy access the CameraCaptures var.
             if (videoCaptures == null)
                 videoCaptures = new VideoCapture[0];
+
+            // Change default save folder
+            PathConfig.SaveFolder = Application.dataPath + "/PlayerData/Recordings/";
+
             // Create default root folder if not created.
             if (!Directory.Exists(PathConfig.SaveFolder))
             {
                 Directory.CreateDirectory(PathConfig.SaveFolder);
             }
+
             status = StatusType.NOT_START;
         }
         /// <summary>

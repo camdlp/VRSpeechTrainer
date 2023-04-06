@@ -1,23 +1,14 @@
 using UnityEngine;
 using RockVR.Video;
 using UnityEngine.XR.Interaction.Toolkit;
+using UnityEngine.Networking;
+using System.IO;
 
 namespace UnityEngine.XR.Content.Interaction
 {
     public class StartButtonHandler : MonoBehaviour
     {
         public XRPushButton xrPushButton;
-
-        //private void OnEnable()
-        //{
-        //    xrPushButton.onPress.AddListener(OnPushButtonPress);
-            
-        //}
-
-        //private void OnDisable()
-        //{
-        //    xrPushButton.onPress.RemoveListener(OnPushButtonPress);
-        //}
 
         public void OnPushButtonPress()
         {
@@ -34,5 +25,7 @@ namespace UnityEngine.XR.Content.Interaction
                 VideoCaptureCtrl.instance.StopCapture();
             }
         }
+
+        
     }
 }

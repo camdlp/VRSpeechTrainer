@@ -1,9 +1,6 @@
 from flask import Flask, jsonify, request, send_file, render_template
 import os
-import io
 import zipfile
-from PyPDF2 import PdfFileReader
-from PIL import Image
 import tempfile
 from pdf2image import convert_from_path
 

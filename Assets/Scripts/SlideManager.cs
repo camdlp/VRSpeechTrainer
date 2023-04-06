@@ -90,7 +90,7 @@ public class SlideManager : MonoBehaviour
 
             if (www.result != UnityWebRequest.Result.Success)
             {
-                Debug.LogError(www.error);
+                //Debug.LogError(www.error);
             }
             else
             {
