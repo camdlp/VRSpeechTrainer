@@ -1,5 +1,5 @@
-[LOG]: [FFmpegLib]: DEST URL: C:/Users/Carlos/VRSpeechTrainer/Assets/PlayerData/Recordings/2023-04-06-18-06-25-0KX16.mp4
-[LOG]: [FFmpegLib]: Build command: "C:/Users/Carlos/VRSpeechTrainer/Assets/StreamingAssets/RockVR/FFmpeg/Windows/ffmpeg.exe" -f rawvideo -pix_fmt rgb24 -r 30 -s 640x480 -i - -y -preset ultrafast -pix_fmt yuv420p -vcodec libx264 -crf 18 -vf vflip -framerate 30 -tune zerolatency "C:/Users/Carlos/VRSpeechTrainer/Assets/PlayerData/Recordings/2023-04-06-18-06-25-0KX16.mp4"
+[LOG]: [FFmpegLib]: DEST URL: C:/Users/Carlos/VRSpeechTrainer/Assets/PlayerData/Recordings/2023-04-07-12-57-34-92SAU.mp4
+[LOG]: [FFmpegLib]: Build command: "C:/Users/Carlos/VRSpeechTrainer/Assets/StreamingAssets/RockVR/FFmpeg/Windows/ffmpeg.exe" -f rawvideo -pix_fmt rgb24 -r 30 -s 640x480 -i - -y -preset ultrafast -pix_fmt yuv420p -vcodec libx264 -crf 18 -vf vflip -framerate 30 -tune zerolatency "C:/Users/Carlos/VRSpeechTrainer/Assets/PlayerData/Recordings/2023-04-07-12-57-34-92SAU.mp4"
 [LOG]: [FFmpegLib]: Write data bytes: 921600
 [LOG]: [FFmpegLib]: Write data bytes: 921600
 [LOG]: [FFmpegLib]: Write data bytes: 921600
@@ -141,8 +141,6 @@
 [LOG]: [FFmpegLib]: Write data bytes: 921600
 [LOG]: [FFmpegLib]: Write data bytes: 921600
 [LOG]: [FFmpegLib]: Write data bytes: 921600
-[LOG]: [FFmpegLib]: DEST URL: C:/Users/Carlos/VRSpeechTrainer/Assets/PlayerData/Recordings/2023-04-06-18-43-27-GWQC3.mp4
-[LOG]: [FFmpegLib]: Build command: "C:/Users/Carlos/VRSpeechTrainer/Assets/StreamingAssets/RockVR/FFmpeg/Windows/ffmpeg.exe" -f rawvideo -pix_fmt rgb24 -r 30 -s 640x480 -i - -y -preset ultrafast -pix_fmt yuv420p -vcodec libx264 -crf 18 -vf vflip -framerate 30 -tune zerolatency "C:/Users/Carlos/VRSpeechTrainer/Assets/PlayerData/Recordings/2023-04-06-18-43-27-GWQC3.mp4"
 [LOG]: [FFmpegLib]: Write data bytes: 921600
 [LOG]: [FFmpegLib]: Write data bytes: 921600
 [LOG]: [FFmpegLib]: Write data bytes: 921600
@@ -155,6 +153,8 @@
 [LOG]: [FFmpegLib]: Write data bytes: 921600
 [LOG]: [FFmpegLib]: Write data bytes: 921600
 [LOG]: [FFmpegLib]: Write data bytes: 921600
+[LOG]: [FFmpegLib]: DEST URL: C:/Users/Carlos/VRSpeechTrainer/Assets/PlayerData/Recordings/2023-04-07-13-06-24-AZIMG.mp4
+[LOG]: [FFmpegLib]: Build command: "C:/Users/Carlos/VRSpeechTrainer/Assets/StreamingAssets/RockVR/FFmpeg/Windows/ffmpeg.exe" -f rawvideo -pix_fmt rgb24 -r 30 -s 640x480 -i - -y -preset ultrafast -pix_fmt yuv420p -vcodec libx264 -crf 18 -vf vflip -framerate 30 -tune zerolatency "C:/Users/Carlos/VRSpeechTrainer/Assets/PlayerData/Recordings/2023-04-07-13-06-24-AZIMG.mp4"
 [LOG]: [FFmpegLib]: Write data bytes: 921600
 [LOG]: [FFmpegLib]: Write data bytes: 921600
 [LOG]: [FFmpegLib]: Write data bytes: 921600
@@ -256,8 +256,6 @@
 [LOG]: [FFmpegLib]: Write data bytes: 921600
 [LOG]: [FFmpegLib]: Write data bytes: 921600
 [LOG]: [FFmpegLib]: Write data bytes: 921600
-[LOG]: [FFmpegLib]: DEST URL: C:/Users/Carlos/VRSpeechTrainer/Assets/PlayerData/Recordings/2023-04-06-18-49-44-XG3VX.mp4
-[LOG]: [FFmpegLib]: Build command: "C:/Users/Carlos/VRSpeechTrainer/Assets/StreamingAssets/RockVR/FFmpeg/Windows/ffmpeg.exe" -f rawvideo -pix_fmt rgb24 -r 30 -s 640x480 -i - -y -preset ultrafast -pix_fmt yuv420p -vcodec libx264 -crf 18 -vf vflip -framerate 30 -tune zerolatency "C:/Users/Carlos/VRSpeechTrainer/Assets/PlayerData/Recordings/2023-04-06-18-49-44-XG3VX.mp4"
 [LOG]: [FFmpegLib]: Write data bytes: 921600
 [LOG]: [FFmpegLib]: Write data bytes: 921600
 [LOG]: [FFmpegLib]: Write data bytes: 921600
@@ -286,6 +284,8 @@
 [LOG]: [FFmpegLib]: Write data bytes: 921600
 [LOG]: [FFmpegLib]: Write data bytes: 921600
 [LOG]: [FFmpegLib]: Write data bytes: 921600
+[LOG]: [FFmpegLib]: DEST URL: F:\Carlos PC\Documentos/RockVR/Video/2023-04-07-13-19-55-L824D.mp4
+[LOG]: [FFmpegLib]: Build command: "C:/Users/Carlos/VRSpeechTrainer/Assets/StreamingAssets/RockVR/FFmpeg/Windows/ffmpeg.exe" -f rawvideo -pix_fmt rgb24 -r 30 -s 640x480 -i - -y -preset ultrafast -pix_fmt yuv420p -vcodec libx264 -crf 18 -vf vflip -framerate 30 -tune zerolatency "F:\Carlos PC\Documentos/RockVR/Video/2023-04-07-13-19-55-L824D.mp4"
 [LOG]: [FFmpegLib]: Write data bytes: 921600
 [LOG]: [FFmpegLib]: Write data bytes: 921600
 [LOG]: [FFmpegLib]: Write data bytes: 921600
@@ -359,8 +359,6 @@
 [LOG]: [FFmpegLib]: Write data bytes: 921600
 [LOG]: [FFmpegLib]: Write data bytes: 921600
 [LOG]: [FFmpegLib]: Write data bytes: 921600
-[LOG]: [FFmpegLib]: DEST URL: F:\Carlos PC\Documentos/RockVR/Video/2023-04-06-18-51-41-W08P5.mp4
-[LOG]: [FFmpegLib]: Build command: "C:/Users/Carlos/VRSpeechTrainer/Assets/StreamingAssets/RockVR/FFmpeg/Windows/ffmpeg.exe" -f rawvideo -pix_fmt rgb24 -r 30 -s 640x480 -i - -y -preset ultrafast -pix_fmt yuv420p -vcodec libx264 -crf 18 -vf vflip -framerate 30 -tune zerolatency "F:\Carlos PC\Documentos/RockVR/Video/2023-04-06-18-51-41-W08P5.mp4"
 [LOG]: [FFmpegLib]: Write data bytes: 921600
 [LOG]: [FFmpegLib]: Write data bytes: 921600
 [LOG]: [FFmpegLib]: Write data bytes: 921600
@@ -408,176 +406,8 @@
 [LOG]: [FFmpegLib]: Write data bytes: 921600
 [LOG]: [FFmpegLib]: Write data bytes: 921600
 [LOG]: [FFmpegLib]: Write data bytes: 921600
-[LOG]: [FFmpegLib]: Write data bytes: 921600
-[LOG]: [FFmpegLib]: Write data bytes: 921600
-[LOG]: [FFmpegLib]: Write data bytes: 921600
-[LOG]: [FFmpegLib]: Write data bytes: 921600
-[LOG]: [FFmpegLib]: Write data bytes: 921600
-[LOG]: [FFmpegLib]: Write data bytes: 921600
-[LOG]: [FFmpegLib]: Write data bytes: 921600
-[LOG]: [FFmpegLib]: Write data bytes: 921600
-[LOG]: [FFmpegLib]: Write data bytes: 921600
-[LOG]: [FFmpegLib]: Write data bytes: 921600
-[LOG]: [FFmpegLib]: Write data bytes: 921600
-[LOG]: [FFmpegLib]: Write data bytes: 921600
-[LOG]: [FFmpegLib]: Write data bytes: 921600
-[LOG]: [FFmpegLib]: Write data bytes: 921600
-[LOG]: [FFmpegLib]: Write data bytes: 921600
-[LOG]: [FFmpegLib]: Write data bytes: 921600
-[LOG]: [FFmpegLib]: Write data bytes: 921600
-[LOG]: [FFmpegLib]: Write data bytes: 921600
-[LOG]: [FFmpegLib]: Write data bytes: 921600
-[LOG]: [FFmpegLib]: Write data bytes: 921600
-[LOG]: [FFmpegLib]: Write data bytes: 921600
-[LOG]: [FFmpegLib]: Write data bytes: 921600
-[LOG]: [FFmpegLib]: Write data bytes: 921600
-[LOG]: [FFmpegLib]: Write data bytes: 921600
-[LOG]: [FFmpegLib]: Write data bytes: 921600
-[LOG]: [FFmpegLib]: Write data bytes: 921600
-[LOG]: [FFmpegLib]: Write data bytes: 921600
-[LOG]: [FFmpegLib]: Write data bytes: 921600
-[LOG]: [FFmpegLib]: Write data bytes: 921600
-[LOG]: [FFmpegLib]: Write data bytes: 921600
-[LOG]: [FFmpegLib]: Write data bytes: 921600
-[LOG]: [FFmpegLib]: Write data bytes: 921600
-[LOG]: [FFmpegLib]: Write data bytes: 921600
-[LOG]: [FFmpegLib]: Write data bytes: 921600
-[LOG]: [FFmpegLib]: Write data bytes: 921600
-[LOG]: [FFmpegLib]: Write data bytes: 921600
-[LOG]: [FFmpegLib]: Write data bytes: 921600
-[LOG]: [FFmpegLib]: Write data bytes: 921600
-[LOG]: [FFmpegLib]: Write data bytes: 921600
-[LOG]: [FFmpegLib]: Write data bytes: 921600
-[LOG]: [FFmpegLib]: Write data bytes: 921600
-[LOG]: [FFmpegLib]: Write data bytes: 921600
-[LOG]: [FFmpegLib]: Write data bytes: 921600
-[LOG]: [FFmpegLib]: Write data bytes: 921600
-[LOG]: [FFmpegLib]: Write data bytes: 921600
-[LOG]: [FFmpegLib]: Write data bytes: 921600
-[LOG]: [FFmpegLib]: Write data bytes: 921600
-[LOG]: [FFmpegLib]: Write data bytes: 921600
-[LOG]: [FFmpegLib]: Write data bytes: 921600
-[LOG]: [FFmpegLib]: Write data bytes: 921600
-[LOG]: [FFmpegLib]: Write data bytes: 921600
-[LOG]: [FFmpegLib]: Write data bytes: 921600
-[LOG]: [FFmpegLib]: Write data bytes: 921600
-[LOG]: [FFmpegLib]: Write data bytes: 921600
-[LOG]: [FFmpegLib]: Write data bytes: 921600
-[LOG]: [FFmpegLib]: Write data bytes: 921600
-[LOG]: [FFmpegLib]: Write data bytes: 921600
-[LOG]: [FFmpegLib]: Write data bytes: 921600
-[LOG]: [FFmpegLib]: Write data bytes: 921600
-[LOG]: [FFmpegLib]: Write data bytes: 921600
-[LOG]: [FFmpegLib]: DEST URL: C:/Users/Carlos/VRSpeechTrainer/Assets/PlayerData/Recordings/2023-04-06-18-53-12-D0QHL.mp4
-[LOG]: [FFmpegLib]: Build command: "C:/Users/Carlos/VRSpeechTrainer/Assets/StreamingAssets/RockVR/FFmpeg/Windows/ffmpeg.exe" -f rawvideo -pix_fmt rgb24 -r 30 -s 640x480 -i - -y -preset ultrafast -pix_fmt yuv420p -vcodec libx264 -crf 18 -vf vflip -framerate 30 -tune zerolatency "C:/Users/Carlos/VRSpeechTrainer/Assets/PlayerData/Recordings/2023-04-06-18-53-12-D0QHL.mp4"
-[LOG]: [FFmpegLib]: Write data bytes: 921600
-[LOG]: [FFmpegLib]: Write data bytes: 921600
-[LOG]: [FFmpegLib]: Write data bytes: 921600
-[LOG]: [FFmpegLib]: Write data bytes: 921600
-[LOG]: [FFmpegLib]: Write data bytes: 921600
-[LOG]: [FFmpegLib]: Write data bytes: 921600
-[LOG]: [FFmpegLib]: Write data bytes: 921600
-[LOG]: [FFmpegLib]: Write data bytes: 921600
-[LOG]: [FFmpegLib]: Write data bytes: 921600
-[LOG]: [FFmpegLib]: Write data bytes: 921600
-[LOG]: [FFmpegLib]: Write data bytes: 921600
-[LOG]: [FFmpegLib]: Write data bytes: 921600
-[LOG]: [FFmpegLib]: Write data bytes: 921600
-[LOG]: [FFmpegLib]: Write data bytes: 921600
-[LOG]: [FFmpegLib]: Write data bytes: 921600
-[LOG]: [FFmpegLib]: Write data bytes: 921600
-[LOG]: [FFmpegLib]: Write data bytes: 921600
-[LOG]: [FFmpegLib]: Write data bytes: 921600
-[LOG]: [FFmpegLib]: Write data bytes: 921600
-[LOG]: [FFmpegLib]: Write data bytes: 921600
-[LOG]: [FFmpegLib]: Write data bytes: 921600
-[LOG]: [FFmpegLib]: Write data bytes: 921600
-[LOG]: [FFmpegLib]: Write data bytes: 921600
-[LOG]: [FFmpegLib]: Write data bytes: 921600
-[LOG]: [FFmpegLib]: Write data bytes: 921600
-[LOG]: [FFmpegLib]: Write data bytes: 921600
-[LOG]: [FFmpegLib]: Write data bytes: 921600
-[LOG]: [FFmpegLib]: Write data bytes: 921600
-[LOG]: [FFmpegLib]: Write data bytes: 921600
-[LOG]: [FFmpegLib]: Write data bytes: 921600
-[LOG]: [FFmpegLib]: Write data bytes: 921600
-[LOG]: [FFmpegLib]: Write data bytes: 921600
-[LOG]: [FFmpegLib]: Write data bytes: 921600
-[LOG]: [FFmpegLib]: Write data bytes: 921600
-[LOG]: [FFmpegLib]: Write data bytes: 921600
-[LOG]: [FFmpegLib]: Write data bytes: 921600
-[LOG]: [FFmpegLib]: Write data bytes: 921600
-[LOG]: [FFmpegLib]: Write data bytes: 921600
-[LOG]: [FFmpegLib]: Write data bytes: 921600
-[LOG]: [FFmpegLib]: Write data bytes: 921600
-[LOG]: [FFmpegLib]: Write data bytes: 921600
-[LOG]: [FFmpegLib]: Write data bytes: 921600
-[LOG]: [FFmpegLib]: Write data bytes: 921600
-[LOG]: [FFmpegLib]: Write data bytes: 921600
-[LOG]: [FFmpegLib]: Write data bytes: 921600
-[LOG]: [FFmpegLib]: Write data bytes: 921600
-[LOG]: [FFmpegLib]: Write data bytes: 921600
-[LOG]: [FFmpegLib]: Write data bytes: 921600
-[LOG]: [FFmpegLib]: Write data bytes: 921600
-[LOG]: [FFmpegLib]: Write data bytes: 921600
-[LOG]: [FFmpegLib]: Write data bytes: 921600
-[LOG]: [FFmpegLib]: Write data bytes: 921600
-[LOG]: [FFmpegLib]: Write data bytes: 921600
-[LOG]: [FFmpegLib]: Write data bytes: 921600
-[LOG]: [FFmpegLib]: Write data bytes: 921600
-[LOG]: [FFmpegLib]: Write data bytes: 921600
-[LOG]: [FFmpegLib]: Write data bytes: 921600
-[LOG]: [FFmpegLib]: Write data bytes: 921600
-[LOG]: [FFmpegLib]: Write data bytes: 921600
-[LOG]: [FFmpegLib]: Write data bytes: 921600
-[LOG]: [FFmpegLib]: Write data bytes: 921600
-[LOG]: [FFmpegLib]: Write data bytes: 921600
-[LOG]: [FFmpegLib]: Write data bytes: 921600
-[LOG]: [FFmpegLib]: Write data bytes: 921600
-[LOG]: [FFmpegLib]: Write data bytes: 921600
-[LOG]: [FFmpegLib]: Write data bytes: 921600
-[LOG]: [FFmpegLib]: Write data bytes: 921600
-[LOG]: [FFmpegLib]: Write data bytes: 921600
-[LOG]: [FFmpegLib]: Write data bytes: 921600
-[LOG]: [FFmpegLib]: Write data bytes: 921600
-[LOG]: [FFmpegLib]: Write data bytes: 921600
-[LOG]: [FFmpegLib]: Write data bytes: 921600
-[LOG]: [FFmpegLib]: Write data bytes: 921600
-[LOG]: [FFmpegLib]: Write data bytes: 921600
-[LOG]: [FFmpegLib]: Write data bytes: 921600
-[LOG]: [FFmpegLib]: Write data bytes: 921600
-[LOG]: [FFmpegLib]: Write data bytes: 921600
-[LOG]: [FFmpegLib]: Write data bytes: 921600
-[LOG]: [FFmpegLib]: Write data bytes: 921600
-[LOG]: [FFmpegLib]: Write data bytes: 921600
-[LOG]: [FFmpegLib]: Write data bytes: 921600
-[LOG]: [FFmpegLib]: Write data bytes: 921600
-[LOG]: [FFmpegLib]: Write data bytes: 921600
-[LOG]: [FFmpegLib]: Write data bytes: 921600
-[LOG]: [FFmpegLib]: Write data bytes: 921600
-[LOG]: [FFmpegLib]: Write data bytes: 921600
-[LOG]: [FFmpegLib]: Write data bytes: 921600
-[LOG]: [FFmpegLib]: Write data bytes: 921600
-[LOG]: [FFmpegLib]: Write data bytes: 921600
-[LOG]: [FFmpegLib]: Write data bytes: 921600
-[LOG]: [FFmpegLib]: Write data bytes: 921600
-[LOG]: [FFmpegLib]: Write data bytes: 921600
-[LOG]: [FFmpegLib]: Write data bytes: 921600
-[LOG]: [FFmpegLib]: Write data bytes: 921600
-[LOG]: [FFmpegLib]: Write data bytes: 921600
-[LOG]: [FFmpegLib]: Write data bytes: 921600
-[LOG]: [FFmpegLib]: Write data bytes: 921600
-[LOG]: [FFmpegLib]: Write data bytes: 921600
-[LOG]: [FFmpegLib]: Write data bytes: 921600
-[LOG]: [FFmpegLib]: Write data bytes: 921600
-[LOG]: [FFmpegLib]: Write data bytes: 921600
-[LOG]: [FFmpegLib]: Write data bytes: 921600
-[LOG]: [FFmpegLib]: Write data bytes: 921600
-[LOG]: [FFmpegLib]: Write data bytes: 921600
-[LOG]: [FFmpegLib]: Write data bytes: 921600
-[LOG]: [FFmpegLib]: Write data bytes: 921600
-[LOG]: [FFmpegLib]: Write data bytes: 921600
-[LOG]: [FFmpegLib]: Write data bytes: 921600
+[LOG]: [FFmpegLib]: DEST URL: C:/Users/Carlos/VRSpeechTrainer/Assets/PlayerData/Recordings/2023-04-07-13-30-23-D28XK.mp4
+[LOG]: [FFmpegLib]: Build command: "C:/Users/Carlos/VRSpeechTrainer/Assets/StreamingAssets/RockVR/FFmpeg/Windows/ffmpeg.exe" -f rawvideo -pix_fmt rgb24 -r 30 -s 640x480 -i - -y -preset ultrafast -pix_fmt yuv420p -vcodec libx264 -crf 18 -vf vflip -framerate 30 -tune zerolatency "C:/Users/Carlos/VRSpeechTrainer/Assets/PlayerData/Recordings/2023-04-07-13-30-23-D28XK.mp4"
 [LOG]: [FFmpegLib]: Write data bytes: 921600
 [LOG]: [FFmpegLib]: Write data bytes: 921600
 [LOG]: [FFmpegLib]: Write data bytes: 921600

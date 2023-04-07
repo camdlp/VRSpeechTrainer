@@ -3306,6 +3306,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 532522526}
+  - component: {fileID: 532522527}
   m_Layer: 0
   m_Name: Settings Table
   m_TagString: Untagged
@@ -3329,6 +3330,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
+--- !u!114 &532522527
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 532522525}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ff7d2e8a7e43534e8b7d070b994339c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &542772283
 GameObject:
   m_ObjectHideFlags: 0
@@ -10516,7 +10529,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnRelease.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
-      objectReference: {fileID: 2074347817}
+      objectReference: {fileID: 0}
     - target: {fileID: 2304902795837412248, guid: da3b468b35b58334693dfcd04f6e06a7,
         type: 3}
       propertyPath: m_OnPress.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
@@ -10770,27 +10783,7 @@ MonoBehaviour:
   _videoCaptures:
   - {fileID: 0}
   - {fileID: 2074347814}
-  _audioCapture: {fileID: 1836418236}
---- !u!114 &1836418236
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1455969524}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 53bf4be83c4174504b904e958637cced, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!81 &1836418237
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1455969524}
-  m_Enabled: 1
+  _audioCapture: {fileID: 0}
 --- !u!1 &1840009204
 GameObject:
   m_ObjectHideFlags: 0
@@ -13109,7 +13102,6 @@ GameObject:
   - component: {fileID: 2074347815}
   - component: {fileID: 2074347814}
   - component: {fileID: 2074347813}
-  - component: {fileID: 2074347817}
   m_Layer: 0
   m_Name: Recording Camera
   m_TagString: Untagged
@@ -13237,18 +13229,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2074347817
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2074347812}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9ff7d2e8a7e43534e8b7d070b994339c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &2078328370
 GameObject:
   m_ObjectHideFlags: 0

@@ -51,7 +51,7 @@
             $.getJSON('/recordings', function(recordings) {
                 $('#recordings-list').empty();
                 recordings.forEach(function(recording) {
-                    var downloadLink = '/api/download?type=Recordings&filename=' + encodeURIComponent(recording);
+                    var downloadLink = '/api/download_recording?filename=' + encodeURIComponent(recording);
                     $('#recordings-list').append('<li class="list-group-item d-flex justify-content-between align-items-center">' + recording + '<a href="' + downloadLink + '" class="btn btn-sm btn-outline-primary"><i class="fas fa-download"></i></a></li>');
                 });
             });
