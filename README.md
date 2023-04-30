@@ -1,8 +1,11 @@
 # VRSpeech
+<div>
+  <img src="title.gif" alt="VRSpeech Demo" alt="VRSpeech Demo" width="640" height="360" />
+</div>
 
 VRSpeech is a virtual reality (VR) application that lets you practice your presentations. It also includes a Flask API, located in the `./API` directory, which handles the backend functionality for the application.
 
-## Getting Started
+## 🚀 Getting Started
 
 To get started with VRSpeech, follow the steps below:
 
@@ -41,7 +44,7 @@ To get started with VRSpeech, follow the steps below:
 
 4. Press the `Play` button in the Unity Editor to run the application.
 
-## User Guide
+## 📖 User Guide
 
 This user guide will help you get familiar with the VRSpeech application and its features.
 
@@ -63,7 +66,7 @@ The Flask API provides the backend functionality for VRSpeech. It runs on your l
 
 3. If needed, you can monitor the API logs for any errors, warnings, or status updates. The logs will be printed to the console where the API is running.
 
-## Troubleshooting
+## ❗ Troubleshooting
 
 If you encounter any issues while using VRSpeech, try the following troubleshooting steps:
 
