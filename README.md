@@ -1,13 +1,13 @@
-# VRSpeech
+# VR Speech
 <div>
-  <img src="title.gif" alt="VRSpeech Demo" alt="VRSpeech Demo" width="640" height="360" />
+  <img src="title.gif" alt="VRS peech Demo" alt="VRS peech Demo" width="640" height="360" />
 </div>
 
-VRSpeech is a virtual reality (VR) application that lets you practice your presentations. It also includes a Flask API, located in the `./API` directory, which handles the backend functionality for the application.
+VR Speech is a virtual reality (VR) application that lets you practice your presentations. It also includes a Flask API, located in the `./API` directory, which handles the backend functionality for the application.
 
 ## 🚀 Getting Started
 
-To get started with VRSpeech, follow the steps below:
+To get started with VR Speech, follow the steps below:
 
 ### Prerequisites
 
@@ -20,21 +20,21 @@ To get started with VRSpeech, follow the steps below:
 ### Installation
 
 1. Clone the repository:
-`git clone https://github.com/yourusername/VRSpeech.git`
-2. Open the Unity project by launching Unity and selecting the `VRSpeech` folder.
+`git clone https://github.com/camdlp/VRSpeechTrainer.git`
+2. Open the Unity project by launching Unity and selecting the `VRSpeechTrainer` folder.
 
 3. Install the Oculus Integration package from the Unity Asset Store.
 
 4. Set up the Oculus Link cable and connect your Oculus compatible VR headset to your PC.
 
 5. Install the Flask API dependencies:
-`cd VRSpeech/API`
+`cd VRSpeechTrainer/API`
 `pip install -r requirements.txt`
 
 6. Run the Flask API:
 `python app.py`
 
-### Running VRSpeech
+### Running VR Speech
 
 1. In Unity, go to `File > Build Settings`, select your target platform, and click `Switch Platform`.
 
@@ -46,7 +46,7 @@ To get started with VRSpeech, follow the steps below:
 
 ## 📖 User Guide
 
-This user guide will help you get familiar with the VRSpeech application and its features.
+This user guide will help you get familiar with the VR Speech application and its features.
 
 ### Navigating the VR Environment
 
@@ -58,7 +58,7 @@ This user guide will help you get familiar with the VRSpeech application and its
 
 ### Using the Flask API
 
-The Flask API provides the backend functionality for VRSpeech. It runs on your local machine and communicates with the Unity application. To use the API, follow these steps:
+The Flask API provides the backend functionality for VR Speech. It runs on your local machine and communicates with the Unity application. To use the API, follow these steps:
 
 1. Make sure the Flask API is running. If not, start it by following the instructions in the [Installation](#installation) section.
 
@@ -68,7 +68,7 @@ The Flask API provides the backend functionality for VRSpeech. It runs on your l
 
 ## ❗ Troubleshooting
 
-If you encounter any issues while using VRSpeech, try the following troubleshooting steps:
+If you encounter any issues while using VR Speech, try the following troubleshooting steps:
 
 1. Make sure your VR headset is connected to your PC via the Oculus Link cable, and the Oculus software is running on your PC.
 
@@ -80,7 +80,7 @@ If you encounter any issues while using VRSpeech, try the following troubleshoot
 
 ## Contributing
 
-If you would like to contribute to the VRSpeech project, please follow these steps:
+If you would like to contribute to the VR Speech project, please follow these steps:
 
 1. Fork the repository on GitHub.
 
@@ -91,7 +91,7 @@ If you would like to contribute to the VRSpeech project, please follow these ste
 4. Submit a pull request, and provide a detailed description of your changes.
 
 ## License
-VRSpeech is licensed under the [GLPv3](https://www.gnu.org/licenses/gpl-3.0.html).
+VR Speech is licensed under the [GLPv3](https://www.gnu.org/licenses/gpl-3.0.html).
 
 ## Acknowledgements
 [Unity](https://unity.com/)
