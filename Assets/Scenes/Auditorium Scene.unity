@@ -4343,7 +4343,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 593387855}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -0.00016859}
+  m_LocalPosition: {x: 0, y: 0, z: -0.00042468}
   m_LocalScale: {x: 3.7910593, y: 3.7910593, z: 3.7910593}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -4355,8 +4355,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -0.00016859}
-  m_SizeDelta: {x: 160, y: 30}
+  m_AnchoredPosition: {x: -14.002, y: -40}
+  m_SizeDelta: {x: 180, y: 119.2}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &593387857
 MonoBehaviour:
@@ -10216,7 +10216,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 45, y: 180, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: -0.883, y: 0.867}
+  m_AnchoredPosition: {x: -0.881, y: 0.867}
   m_SizeDelta: {x: 613.1282, y: 606}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1717934105
@@ -10930,6 +10930,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   xrPushButton: {fileID: 1836418232}
   directionalLight: {fileID: 1910276009}
+  spotlightsParent: {fileID: 497874457}
   videoCaptureCtrl: {fileID: 1836418235}
 --- !u!114 &1836418235
 MonoBehaviour:
@@ -13426,7 +13427,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2078328370}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -0.00016859}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 3.7910593, y: 3.7910593, z: 3.7910593}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -13438,8 +13439,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -0.00016859}
-  m_SizeDelta: {x: 160, y: 30}
+  m_AnchoredPosition: {x: 8, y: -35.3}
+  m_SizeDelta: {x: 180.1, y: 118.3}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2078328372
 MonoBehaviour:
@@ -13651,7 +13652,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2103724487}
   m_Layer: 0
-  m_Name: LefttLighting
+  m_Name: LeftLighting
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
