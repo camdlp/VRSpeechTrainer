@@ -19,32 +19,34 @@ public class SlideManager : MonoBehaviour
     private Texture2D[] slides;
     private int currentSlide = 0;
 
+    // These booleans are used to manage the button states of the VR controller
     private bool primaryButtonReleased;
     private bool secondaryButtonReleased;
-
 
     private void Start()
     {
         primaryButtonReleased = true;
         secondaryButtonReleased = true;
 
-        // Agregar listener al evento onValueChanged del dropdown
+        // Add a listener to the dropdown's onValueChanged event
         slideDropdown.onValueChanged.AddListener(delegate
         {
             OnSlideSelected();
         });
 
-        // Llamar al método OnSlideSelected al iniciar la escena
+        // Load the initially selected slide
         OnSlideSelected();
     }
 
+    // This function is called every frame and handles VR controller inputs
     private void Update()
     {
-        // Check if the A button on the right controller is pressed
+        // Search for the right VR controller
         InputDeviceCharacteristics characteristics = InputDeviceCharacteristics.Controller | InputDeviceCharacteristics.Right;
         List<InputDevice> devices = new List<InputDevice>();
         InputDevices.GetDevices(devices);
 
+        // Handle inputs for the right VR controller
         foreach (InputDevice device in devices)
         {
             if (device.isValid && (device.characteristics & characteristics) == characteristics)
@@ -80,7 +82,7 @@ public class SlideManager : MonoBehaviour
         }
     }
 
-
+    // Coroutine to fetch slides from the server and unzip them
     public IEnumerator GetSlides(string slideFilename)
     {
         string apiURL = $"http://localhost:5000/api/download_slides?filename={slideFilename}";
@@ -90,7 +92,7 @@ public class SlideManager : MonoBehaviour
 
             if (www.result != UnityWebRequest.Result.Success)
             {
-                //Debug.LogError(www.error);
+                // Debug.LogError(www.error);
             }
             else
             {
@@ -106,6 +108,7 @@ public class SlideManager : MonoBehaviour
         loadingPanel.SetActive(false);
     }
 
+    // Function to unzip a zip file and return an array of Texture2D
     public Texture2D[] UnzipSlides(byte[] zipData)
     {
         List<Texture2D> textures = new List<Texture2D>();
@@ -137,6 +140,7 @@ public class SlideManager : MonoBehaviour
         return textures.ToArray();
     }
 
+    // This function is called when a new slide is selected in the dropdown
     public void OnSlideSelected()
     {
         string selectedSlide = slideDropdown.options[slideDropdown.value].text;
@@ -145,6 +149,7 @@ public class SlideManager : MonoBehaviour
         StartCoroutine(GetSlides(selectedSlide));
     }
 
+    // Function to navigate to the next slide
     public void NextSlide()
     {
         if (slides != null && slides.Length > 0)
@@ -158,6 +163,7 @@ public class SlideManager : MonoBehaviour
         }
     }
 
+    // Function to navigate to the previous slide
     public void PreviousSlide()
     {
         if (slides != null && slides.Length > 0)

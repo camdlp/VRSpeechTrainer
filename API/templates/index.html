@@ -1,45 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <!-- Meta tags -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <!-- Page title -->
     <title>VRSpeech - Files Hub</title>
+
+    <!-- Include Bootstrap CSS -->
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
       integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
       crossorigin="anonymous"
     />
+
+    <!-- Include FontAwesome for icons -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css"
     />
+
+    <!-- Include Bootstrap JS and dependencies -->
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
       crossorigin="anonymous"
     ></script>
+
+    <!-- Include jQuery for AJAX requests and DOM manipulation -->
     <script
       src="https://code.jquery.com/jquery-3.6.4.min.js"
       integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8="
       crossorigin="anonymous"
     ></script>
+
+    <!-- Include Three.js for 3D rendering -->
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r126/three.min.js"
       integrity="sha512-n8IpKWzDnBOcBhRlHirMZOUvEq2bLRMuJGjuVqbzUJwtTsgwOgK5aS0c1JA647XWYfqvXve8k3PtZdzpipFjgg=="
       crossorigin="anonymous"
     ></script>
+
+    <!-- Include GLTFLoader for loading 3D models -->
     <script src="https://unpkg.com/three@0.126.0/examples/js/loaders/GLTFLoader.js"></script>
   </head>
   <body>
     <div class="container">
+      <!-- Page heading -->
       <h1 class="mt-4 mb-4">VRSpeech</h1>
       <div class="row">
         <div class="col-md-6">
+          <!-- Container for 3D avatar -->
           <div
             id="avatar-container"
             style="width: 100%; height: 400px; background-color: #fffff"
           ></div>
+
+          <!-- Input for avatar URL and button to load it -->
           <div class="input-group mt-3">
             <input
               type="text"
@@ -53,16 +72,18 @@
           </div>
         </div>
         <div class="col-md-6">
+          <!-- Headings and lists for slides and recordings -->
           <h3>Slides & Recordings</h3>
           <ul id="slides-list" class="list-group mb-4"></ul>
           <ul id="recordings-list" class="list-group"></ul>
+
+          <!-- Form for uploading a new file -->
           <div class="mt-4">
             <h4>Upload a new file</h4>
             <form id="upload-form" enctype="multipart/form-data">
               <div class="mb-3">
-                <label for="file" class="form-label"
-                  >Choose a file to upload</label
-                ><input
+                <label for="file" class="form-label">Choose a file to upload</label>
+                <input
                   class="form-control"
                   type="file"
                   id="file"
@@ -76,36 +97,33 @@
         </div>
       </div>
     </div>
+
+    <!-- Script for fetching files, avatar and updating the lists -->
     <script>
       // Fetch the files and display them
       function fetchFiles() {
+        // Fetch slides and populate the slides list
         $.getJSON("/slides", function (slides) {
           $("#slides-list").empty();
           slides.forEach(function (slide) {
-            $("#slides-list").append(
-              '<li class="list-group-item">' + slide + "</li>"
-            );
+            $("#slides-list").append('<li class="list-group-item">' + slide + "</li>");
           });
         });
 
+        // Fetch recordings and populate the recordings list, with download buttons
         $.getJSON("/recordings", function (recordings) {
           $("#recordings-list").empty();
           recordings.forEach(function (recording) {
-            var downloadLink =
-              "/api/download_recording?filename=" +
-              encodeURIComponent(recording);
-            $("#recordings-list").append(
-              '<li class="list-group-item d-flex justify-content-between align-items-center">' +
+            var downloadLink = "/api/download_recording?filename=" + encodeURIComponent(recording);
+            $("#recordings-list").append('<li class="list-group-item d-flex justify-content-between align-items-center">' +
                 recording +
-                '<a href="' +
-                downloadLink +
-                '" class="btn btn-sm btn-outline-primary"><i class="fas fa-download"></i></a></li>'
+                '<a href="' + downloadLink + '" class="btn btn-sm btn-outline-primary"><i class="fas fa-download"></i></a></li>'
             );
           });
         });
       }
 
-      // Upload a new file
+      // Upload a new file when the form is submitted
       $("#upload-form").on("submit", function (e) {
         e.preventDefault();
 
@@ -114,11 +132,11 @@
           url: "/api/upload",
           type: "POST",
           data: formData,
-          processData: false,
-          contentType: false,
+          processData: false,  // Don't process the files
+          contentType: false,  // Set content type to false as jQuery will tell the server its a query string request
           success: function (response) {
             alert(response);
-            fetchFiles();
+            fetchFiles();  // Fetch the files again to update the lists
           },
           error: function (jqXHR, textStatus, errorThrown) {
             alert("Error: " + errorThrown);
@@ -131,35 +149,36 @@
         fetchFiles();
       });
     </script>
+
+    <!-- Script for initializing Three.js, loading the avatar, and animating it -->
     <script>
       let scene, camera, renderer, loader, avatar;
 
+      // Initialize the Three.js environment
       function initThreeJS() {
+        // Initialize scene, camera, renderer and loader
         scene = new THREE.Scene();
         camera = new THREE.PerspectiveCamera(75, 1, 0.1, 1000);
         camera.position.z = 5;
-
         renderer = new THREE.WebGLRenderer({ alpha: true });
         renderer.setSize(400, 400);
-        renderer.setClearColor(0xffffff, 1); // Cambiar el color de fondo a blanco
-        document
-          .getElementById("avatar-container")
-          .appendChild(renderer.domElement);
-
+        renderer.setClearColor(0xffffff, 1);  // Change the background color to white
+        document.getElementById("avatar-container").appendChild(renderer.domElement);
         loader = new THREE.GLTFLoader();
 
-        // Añade iluminación ambiental
+        // Add ambient lighting
         const ambientLight = new THREE.AmbientLight(0xffffff, 0.6);
         scene.add(ambientLight);
 
-        // Añade iluminación direccional
+        // Add directional lighting
         const directionalLight = new THREE.DirectionalLight(0xffffff, 0.8);
         directionalLight.position.set(1, 1, 1);
         scene.add(directionalLight);
 
-        animate();
+        animate();  // Start animation
       }
 
+      // Animate the avatar by rotating it
       function animate() {
         requestAnimationFrame(animate);
         if (avatar) {
@@ -167,60 +186,63 @@
         }
         renderer.render(scene, camera);
       }
+
+      // Dispose the nodes for memory management
       function disposeNode(node) {
         if (node.material) {
-            node.material.dispose();
+          node.material.dispose();
         }
         if (node.geometry) {
-            node.geometry.dispose();
+          node.geometry.dispose();
         }
         if (node.children) {
-            node.children.forEach(disposeNode);
+          node.children.forEach(disposeNode);
         }
-    }
-    
+      }
 
+      // Load an avatar from a Ready Player Me URL (.glb)
       function loadAvatar(url) {
         loader.load(url, function (gltf) {
+          // If an avatar is already loaded, dispose it before loading a new one
           if (avatar) {
-              disposeNode(avatar); // Agregar esta línea
-              scene.remove(avatar);
-              avatar = null;
+            disposeNode(avatar);
+            scene.remove(avatar);
+            avatar = null;
           }
           avatar = gltf.scene;
 
-            // Obtener el tamaño del contenedor
-            const container = document.getElementById("avatar-container");
-            const containerWidth = container.clientWidth;
-            const containerHeight = container.clientHeight;
+          // Get the size of the container
+          const container = document.getElementById("avatar-container");
+          const containerWidth = container.clientWidth;
+          const containerHeight = container.clientHeight;
 
-            // Calcular la escala y posición basándose en el tamaño del contenedor
-            const scale = Math.min(containerWidth, containerHeight) / 180; // Cambiar el valor "400" según el tamaño original del avatar
-            const positionY = -1.5 * scale;
+          // Calculate scale and position based on the container size
+          const scale = Math.min(containerWidth, containerHeight) / 180;  // Change "400" according to the original size of the avatar
+          const positionY = -1.5 * scale;
 
-            // Escalar y ajustar la posición del avatar
-            avatar.scale.set(scale, scale, scale);
-            avatar.position.set(0, positionY, 0);
+          // Scale and adjust the position of the avatar
+          avatar.scale.set(scale, scale, scale);
+          avatar.position.set(0, positionY, 0);
 
-            scene.add(avatar);
-          },
-          undefined,
-          function (error) {
-            console.error(error);
-          }
-        );
+          // Add the avatar to the scene
+          scene.add(avatar);
+        },
+        undefined,  // onProgress callback not needed
+        function (error) {  // onError callback
+          console.error(error);
+        });
       }
 
+      // Load the avatar when the "Load Avatar" button is clicked
       $("#load-avatar").on("click", function () {
         const url = $("#avatar-url").val();
         loadAvatar(url);
       });
 
+      // Initialize Three.js and load the avatar when the page loads
       $(document).ready(function () {
         initThreeJS();
-        loadAvatar(
-          "https://models.readyplayer.me/64500d44a19fd0915f9bd2df.glb"
-        );
+        loadAvatar("https://models.readyplayer.me/64500d44a19fd0915f9bd2df.glb");
       });
     </script>
   </body>

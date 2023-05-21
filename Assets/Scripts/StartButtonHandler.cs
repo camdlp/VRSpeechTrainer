@@ -9,14 +9,16 @@ namespace UnityEngine.XR.Content.Interaction
     {
         public XRPushButton xrPushButton;
         public Light directionalLight;
-        public GameObject spotlightsParent; // Agrega un campo para el objeto que contiene las luces Spotlight
+        // Field for the object containing the Spotlight lights
+        public GameObject spotlightsParent;
         public VideoCaptureCtrl videoCaptureCtrl;
 
-        private Light[] spotlights; // Almacena una referencia a todas las luces Spotlight
+        // Reference to all Spotlight lights
+        private Light[] spotlights;
 
         private void Start()
         {
-            // Encuentra todas las luces Spotlight que son hijas del objeto spotlightsParent
+            // Find all Spotlight lights that are children of the spotlightsParent object
             spotlights = spotlightsParent.GetComponentsInChildren<Light>();
         }
 
@@ -25,19 +27,23 @@ namespace UnityEngine.XR.Content.Interaction
             Debug.Log("Button Pressed");
             Debug.Log(videoCaptureCtrl.status);
 
-            //if (videoCaptureCtrl.status != VideoCaptureCtrlBase.StatusType.STARTED)
-            //{
-            //    videoCaptureCtrl.StartCapture();
-            //}
-            //else
-            //{
-            //    videoCaptureCtrl.StopCapture();
-            //}
+            // Toggle video recording on button press
+            if (videoCaptureCtrl.status != VideoCaptureCtrlBase.StatusType.STARTED)
+            {
+                videoCaptureCtrl.StartCapture();
+            }
+            else
+            {
+                videoCaptureCtrl.StopCapture();
+            }
+            
 
+            // Toggle directional light and Spotlight lights on button press
             StartCoroutine(ToggleDirectionalLight());
-            StartCoroutine(ToggleSpotlights()); // Activa el toggle para todas las luces Spotlight
+            StartCoroutine(ToggleSpotlights());
         }
 
+        // Coroutine to control the on/off state of the directional light
         private IEnumerator ToggleDirectionalLight()
         {
             Debug.Log("Toggling directional light");
@@ -54,14 +60,14 @@ namespace UnityEngine.XR.Content.Interaction
             }
         }
 
-        // Añade una nueva Coroutine para controlar el encendido y apagado de las luces Spotlight
+        // Coroutine to control the on/off state of the Spotlight lights
         private IEnumerator ToggleSpotlights()
         {
             Debug.Log("Toggling spotlights");
 
             float step = 0.05f;
 
-            // Itera sobre todas las luces Spotlight y ajusta su intensidad
+            // Iterates over all Spotlight lights and adjust their intensity
             foreach (Light spotlight in spotlights)
             {
                 float currentIntensity = spotlight.intensity;
@@ -77,4 +83,3 @@ namespace UnityEngine.XR.Content.Interaction
         }
     }
 }
-

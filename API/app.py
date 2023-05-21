@@ -9,8 +9,9 @@ app.config['UPLOAD_FOLDER'] = 'uploads/'
 
 ###### CONVERSIONS ######
 
+# Function to convert a PDF to PNG
 def convert_pdf_to_png(filepath):
-    # Convert the PDF file to a list of images
+    # Convert the PDF file to a list of images for Unity to use as slides
     images = convert_from_path(filepath)
 
     # Return the images
@@ -18,22 +19,26 @@ def convert_pdf_to_png(filepath):
 
 ###### ROUTES ######
 
+# Home page
 @app.route('/')
 def index():
     return render_template('index.html')
 
+# Get the list of slide files
 @app.route('/slides')
 def get_slide_files():
     folder_path = './Slides'
     files = os.listdir(folder_path)
     return jsonify(files)
 
+# Get the list of recording files
 @app.route('/recordings')
 def get_recording_files():
     folder_path = './Recordings'
     files = os.listdir(folder_path)
     return jsonify(files)
 
+# Download slides as zip file
 @app.route('/api/download_slides')
 def download_slides():
     filename = request.args.get('filename')
@@ -63,6 +68,7 @@ def download_slides():
     else:
         return 'File not found', 404
 
+# Download recording file
 @app.route('/api/download_recording')
 def download_recording():
     filename = request.args.get('filename')
@@ -73,6 +79,7 @@ def download_recording():
     else:
         return 'File not found', 404
 
+# Upload file
 @app.route('/api/upload', methods=['POST'])
 def upload_file():
     file = request.files['file']
@@ -93,6 +100,7 @@ def upload_file():
         return 'File uploaded successfully'
     else:
         return 'No file uploaded', 400
-    
+
+# Main function
 if __name__ == '__main__':
     app.run(debug=True)
