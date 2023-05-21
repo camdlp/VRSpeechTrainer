@@ -1,6 +1,6 @@
 # VR Speech
 <div>
-  <img src="title.gif" alt="VRS peech Demo" alt="VRS peech Demo" width="640" height="360" />
+  <img src="title.gif" alt="VRS peech Demo" alt="VR Speech Demo" width="640" height="360" />
 </div>
 
 VR Speech is a virtual reality (VR) application that lets you practice your presentations. It also includes a Flask API, located in the `./API` directory, which handles the backend functionality for the application.
